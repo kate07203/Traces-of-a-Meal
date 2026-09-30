@@ -1,0 +1,89 @@
+/* 1. A neutral palette: the interface stays quiet around the photographs. */
+:root {
+  --ink: #171717;
+  --paper: #ffffff;
+  --muted: #626262;
+  --line: #dedede;
+  --wash: #f4f4f4;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+main { max-width: 1320px; margin: auto; padding: 0 56px; }
+a { color: inherit; text-underline-offset: 4px; }
+header, footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+header { min-height: 100px; border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: 2px; }
+.brand { text-decoration: none; font-weight: 600; }
+header > span { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* 2. An open, editorial grid replaces the enclosing card and tinted panels. */
+.quiz { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; gap: clamp(40px, 6vw, 88px); margin: 72px 0 96px; }
+.building, .question-panel { min-width: 0; }
+.eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 2px; line-height: 1.5; margin: 0 0 32px; color: var(--muted); }
+.building-photo { display: block; width: 100%; height: auto; margin: 0 0 30px; }
+
+/* 3. One type family; size, weight, and spacing establish the hierarchy. */
+h1, h2, h3, h4 { font-family: inherit; }
+h1 { font-size: 28px; font-weight: 400; letter-spacing: -0.8px; line-height: 1.2; margin: 0 0 14px; }
+h2 { font-size: clamp(36px, 4vw, 54px); font-weight: 400; letter-spacing: -1.8px; line-height: 1.08; margin: 0 0 24px; }
+.caption p { font-size: 12px; line-height: 1.7; color: var(--muted); margin: 10px 0; }
+.caption small { display: block; font-size: 11px; line-height: 1.7; color: var(--muted); }
+.intro { color: var(--muted); font-size: 14px; line-height: 1.8; margin: 0; max-width: 45ch; }
+
+/* 4. The answers remain the primary controls, with generous click targets. */
+.answers { display: grid; margin-top: 32px; border-top: 1px solid var(--line); }
+button { font: inherit; cursor: pointer; }
+.answer { display: flex; align-items: center; gap: 22px; width: 100%; min-height: 62px; text-align: left; padding: 17px 16px; border: 0; border-bottom: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.5; }
+.answer span { font-size: 11px; color: var(--muted); flex: 0 0 16px; }
+.answer:hover:not(:disabled) { background: var(--wash); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.answer:disabled { cursor: default; opacity: 1; }
+/* Written feedback still identifies correctness; these tones reinforce it. */
+.answer.correct { background: var(--ink); color: white; border-bottom-color: var(--ink); }
+.answer.correct span { color: white; }
+.answer.incorrect { background: var(--wash); box-shadow: inset 3px 0 0 #777; }
+.hint { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 20px 0 0; }
+
+/* 5. Feedback reads like a portfolio annotation rather than another card. */
+#feedback:not(:empty) { padding: 22px 0 22px 18px; margin-top: 36px; border-left: 2px solid var(--ink); font-size: 14px; line-height: 1.8; font-weight: 400; }
+#explanation { margin-top: 36px; font-size: 14px; line-height: 1.8; }
+h3 { font-size: 19px; font-weight: 500; letter-spacing: -0.3px; line-height: 1.4; margin: 0 0 18px; }
+ul { padding-left: 20px; }
+li { margin-bottom: 14px; }
+strong { font-weight: 600; }
+.takeaway { border-left: 1px solid #888; padding-left: 16px; margin: 24px 0; }
+#explanation a { font-size: 12px; }
+.reset { display: block; margin-top: 28px; min-height: 44px; padding: 13px 22px; background: var(--ink); color: white; border: 1px solid var(--ink); font-size: 13px; }
+.reset:hover { background: #383838; }
+#comparison { margin-top: 36px; padding-top: 32px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.8; }
+#comparison figure { margin: 24px 0 12px; }
+#comparison img { display: block; width: 100%; height: auto; }
+#comparison figcaption { margin-top: 14px; font-size: 13px; font-weight: 600; }
+#comparison h4 { margin: 28px 0 8px; font-size: 14px; font-weight: 600; }
+#comparison p { margin-top: 8px; }
+#comparison-learn { font-size: 12px; }
+.photo-credit, .comparison-note { font-size: 11px; color: var(--muted); }
+footer { padding: 28px 0 36px; border-top: 1px solid var(--line); font-size: 9px; letter-spacing: 1.5px; line-height: 1.6; color: var(--muted); }
+footer span { letter-spacing: 0; font-size: 11px; }
+
+/* Keep comfortable spacing on phones without squeezing the answer buttons. */
+@media (max-width: 760px) {
+  main { padding: 0 24px; }
+  header { min-height: 80px; font-size: 10px; letter-spacing: 1.3px; }
+  .quiz { grid-template-columns: 1fr; gap: 48px; margin: 40px 0 64px; }
+  .eyebrow { margin-bottom: 24px; }
+  .building-photo { margin-bottom: 24px; }
+  h2 { font-size: 40px; letter-spacing: -1.3px; }
+  footer { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
+
+/* Result labels use text as well as tone to identify the checked answers. */
+.answer .answer-result {
+  margin-left: auto;
+  flex: 0 0 auto;
+  color: inherit;
+  font-size: 11px;
+  font-weight: 600;
+}
+@media (max-width: 400px) {
+  .answer { gap: 12px; padding-left: 12px; padding-right: 12px; }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture Study — Who designed it?</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- defer waits until the HTML is ready before running our JavaScript. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="index.html">ARCHITECTURE / STUDY</a><span>01 / 01</span></header>
+    <section class="quiz" aria-labelledby="question">
+      <div class="building">
+        <p class="eyebrow">A STUDY IN FORM & PLACE</p>
+        <!-- src loads our local photo; alt describes it for screen readers.
+             The surrounding link opens the full-size photo for closer study. -->
+        <a href="fallingwater.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size photograph of Fallingwater in a new tab">
+          <img class="building-photo" src="fallingwater.jpg" width="3158" height="2368" alt="Fallingwater in a wooded landscape, with pale horizontal terraces projecting from a stone core above a cascading waterfall.">
+        </a>
+        <div class="caption">
+          <h1>Fallingwater</h1>
+          <p>Mill Run, Pennsylvania · Designed 1935</p>
+          <p><a href="fallingwater.jpg" target="_blank" rel="noopener noreferrer">View full-size photograph ↗</a></p>
+          <small>Photo: Lykantrop, via <a href="https://commons.wikimedia.org/wiki/File:Frank_Lloyd_Wright_-_Fallingwater_exterior_1.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> · Free use</small>
+        </div>
+      </div>
+      <div class="question-panel">
+        <p class="eyebrow">THE ARCHITECT QUIZ</p>
+        <h2 id="question">Who designed<br>this building?</h2>
+        <p class="intro">Look at the terraces, the materials, and the relationship to nature. Chose the correct architect that designed this building.</p>
+        <div class="answers" role="group" aria-labelledby="question">
+          <!-- data-architect gives JavaScript a value to compare. -->
+          <button class="answer" data-architect="Zaha Hadid"><span>A</span>Zaha Hadid</button>
+          <button class="answer" data-architect="Frank Lloyd Wright"><span>B</span>Frank Lloyd Wright</button>
+          <button class="answer" data-architect="Le Corbusier"><span>C</span>Le Corbusier</button>
+          <button class="answer" data-architect="Frank Gehry"><span>D</span>Frank Gehry</button>
+        </div>
+        <p class="hint">One question. A closer look at architecture.</p>
+        <!-- A live region announces feedback to screen readers immediately. -->
+        <div id="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+        <!-- JavaScript fills this reusable card for the selected wrong answer. -->
+        <section id="comparison" aria-labelledby="comparison-title" hidden>
+          <h3 id="comparison-title"></h3>
+          <figure>
+            <a id="comparison-full" target="_blank" rel="noopener noreferrer" aria-label="Open comparison photograph full size in a new tab">
+              <img id="comparison-image" alt="">
+            </a>
+            <figcaption id="comparison-building"></figcaption>
+          </figure>
+          <p class="photo-credit"><a id="comparison-credit" target="_blank" rel="noopener noreferrer"></a> · <a id="comparison-license" target="_blank" rel="noopener noreferrer"></a> · Unmodified photo</p>
+          <h4>What to notice in this example</h4>
+          <p id="comparison-look"></p>
+          <h4>Why Fallingwater points to Wright</h4>
+          <p id="comparison-difference"></p>
+          <p id="comparison-prompt" class="takeaway"></p>
+          <p class="comparison-note">These are clues from specific buildings; an architect’s work can vary across a career.</p>
+          <a id="comparison-learn" target="_blank" rel="noopener noreferrer">Learn about this comparison building ↗</a>
+        </section>
+        <div id="explanation" hidden>
+          <h3>The clues: organic architecture</h3>
+          <p>Frank Lloyd Wright designed Fallingwater to connect the house with its natural setting.</p>
+          <ul>
+            <li><strong>Cantilevered terraces:</strong> projecting concrete platforms emphasize long, horizontal lines.</li>
+            <li><strong>Stone and landscape:</strong> stone walls echo the surrounding rock formations.</li>
+            <li><strong>Water beneath the house:</strong> building over the waterfall makes nature part of the experience.</li>
+          </ul>
+          <p class="takeaway">Remember: Wright → organic architecture → harmony with nature.</p>
+          <a href="https://fallingwater.org/history/the-kaufmanns-fallingwater/designing-fallingwater/" target="_blank" rel="noopener noreferrer">Explore the story at Fallingwater ↗</a>
+          <button id="reset" class="reset">Try again ↺</button>
+        </div>
+        <noscript><p>Please enable JavaScript to receive quiz feedback.</p></noscript>
+      </div>
+    </section>
+    <footer>LEARN TO LOOK. LEARN TO RECOGNIZE.<span>Architecture, one building at a time.</span></footer>
+  </main>
+</body>
+</html>

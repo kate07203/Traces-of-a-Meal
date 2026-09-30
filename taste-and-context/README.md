@@ -1,5 +1,13 @@
 # Taste and Context
 
+## Try the demo
+
+To run the demo on your computer, open `taste-and-context/index.html` in a web browser. If you already have this project folder open, simply double-click `index.html`. No installation or additional software dependencies are needed.
+
+Move the slider from “Less hungry” to “More hungry” to grow the halo around the orange. Move it back to shrink the halo. The orange stays the same; the halo represents its possible appeal as hunger changes.
+
+A public live-demo link has not yet been confirmed. These instructions open the demo locally on your computer.
+
 ## Project assignment
 
 Explore how the context of eating shapes the experience of food, beginning with hunger and the satisfaction of a craving.
