@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Traces of a Meal — Thanksgiving Edition</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1><span>Traces of a Meal</span></h1>
+      <p class="subtitle">Thanksgiving Edition</p>
+      <p class="intro">A dinner in motion.</p>
+    </header>
+
+    <section class="timeline-panel" aria-label="Dinner timeline">
+      <div class="timeline-top"><div><output id="clock" for="time-slider">8:00 PM</output></div>
+      <button id="play" type="button">Play dinner</button></div>
+      <label for="time-slider">Drag the lever to move through the meal</label>
+      <input id="time-slider" type="range" min="0" max="90" step="0.1" value="0" aria-valuetext="8:00 PM">
+      <div class="time-ticks"><span>8:00 · Set</span><span>8:30 · Share</span><span>9:00 · Linger</span><span>9:30 · Traces</span></div>
+      <div class="timeline-bottom"><label class="path-toggle"><input id="show-paths" type="checkbox"> Show all paths · entire dinner</label></div>
+    </section>
+    <section class="study" aria-label="Animated dinner table">
+      <div class="drawing">
+        <svg id="table-drawing" viewBox="0 0 960 580" role="img" aria-labelledby="drawing-title drawing-description">
+          <title id="drawing-title">A Thanksgiving table before the meal</title>
+          <desc id="drawing-description">A rectangular table with four neatly arranged place settings, each with a plate, fork, knife, and cup. Turkey, potatoes, and cranberry sauce sit in the center.</desc>
+          <rect class="table-edge" x="40" y="35" width="880" height="510" rx="14" />
+          <rect class="table-inner" x="49" y="44" width="862" height="492" rx="10" />
+          <defs>
+            <marker id="take-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#326fa7" /></marker>
+            <marker id="pass-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#c66a2d" /></marker>
+          </defs>
+          <g id="place-settings"></g>
+          <g id="movement-history"></g>
+          <g id="shared-dishes"></g>
+          <g id="after-traces"></g>
+          <g id="moving-portions"></g>
+        </svg>
+      </div>
+    </section>
+    <section class="legend" aria-label="Movement legend">
+      <div><h2>Movement legend</h2></div>
+      <div class="legend-item">
+        <svg viewBox="0 0 110 24" aria-hidden="true"><path class="take-line" d="M3 12 H98 M88 5 L99 12 L88 19" /></svg>
+        <div><h3>Take food</h3><p>Solid blue · dish → plate</p></div>
+      </div>
+      <div class="legend-item">
+        <svg viewBox="0 0 110 24" aria-hidden="true"><path class="pass-line" d="M3 12 H98" /><path class="pass-head" d="M88 5 L99 12 L88 19" /></svg>
+        <div><h3>Pass dish</h3><p>Dashed orange · serving dish moves</p></div>
+      </div>
+      <div class="legend-item">
+        <svg viewBox="0 0 110 24" aria-hidden="true"><circle cx="35" cy="13" r="2" fill="#8c7150" /><circle cx="52" cy="8" r="3" fill="#8c7150" /><circle cx="70" cy="16" r="2" fill="#8c7150" /></svg>
+        <div><h3>Crumbs</h3><p>Small scattered dots · traces of food</p></div>
+      </div>
+      <div class="legend-item">
+        <svg viewBox="0 0 110 40" aria-hidden="true"><path d="M43 12 l12 -9 9 7 -2 10 9 8 -12 8 -15 -4 -7 -11Z" fill="#fffaf0" stroke="#352f28" stroke-width="1.5" /></svg>
+        <div><h3>Crumpled napkins</h3><p>Irregular outlined shapes · napkins left behind</p></div>
+      </div>
+      <p class="legend-note">Fine gray lines · plates, cups, and utensils shift</p>
+    </section>
+    <footer>Inspired by Sarah Wigglesworth and Jeremy Till’s dining table drawings.</footer>
+  </main>
+</body>
+</html>
