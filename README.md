@@ -13,4 +13,8 @@ I was inspired by Sarah Wigglesworth and Jeremy Till’s dining table drawings a
 
 I made the prototype more abstract to focus on movement and relationships rather than realistic food or people. Simple circles, shapes, dots, and lines make it easier to notice how the table changes over time. Solid blue arrows trace portions of food; dashed orange arrows trace serving dishes. Together, they turn everyday gestures into a visual memory of the meal.
 
-Open `thanksgiving-table/index.html` in a browser to explore the prototype.
+## Open the prototype
+
+[Open the prototype locally](http://127.0.0.1:8000/thanksgiving-table/)
+
+This link works on my computer while the local preview server is running. To explore it on another computer, download this repository and open `thanksgiving-table/index.html` in a browser.
