@@ -15,6 +15,6 @@ I made the prototype more abstract to focus on movement and relationships rather
 
 ## Open the prototype
 
-[Open the prototype locally](http://127.0.0.1:8000/thanksgiving-table/)
+[Open the interactive prototype](https://kate07203.github.io/Traces-of-a-Meal/thanksgiving-table/)
 
-This link works on my computer while the local preview server is running. To explore it on another computer, download this repository and open `thanksgiving-table/index.html` in a browser.
+Drag the time slider or select “Play dinner” to follow the meal. Select “Show all paths” to see the full movement drawing.
